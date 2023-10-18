@@ -10,7 +10,7 @@ function Header({rightElements}:Props) {
     <header className="flex justify-between w-full h-13 px-14 shadow bg-slate-50">
       <div>
         <Link href="/">
-          <Image src={'/husky.png'} width={75} height={10} alt="허숙희 로고" blurDataURL="/husky.png" placeholder="blur" priority/>
+          <Image src={'/husky.png'} width={60} height={60} alt="허숙희 로고" blurDataURL="/husky.png" placeholder="blur" priority/>
         </Link>
       </div>
       {rightElements && 

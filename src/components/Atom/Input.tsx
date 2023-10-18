@@ -1,12 +1,15 @@
+import { Dispatch, SetStateAction } from "react";
+
 interface InputProps {
   value?: string;
   label: string;
   name: string;
   placeholder: string;
   className?: string;
+  onChange: Dispatch<SetStateAction<string>>
 }
 
-export default function Input({label, name, placeholder, value = '',  className=''}: InputProps) {
+export default function Input({label, name, placeholder, value = '',  className='', onChange}: InputProps) {
   const labelStyle = `${!!label ? 'block' : 'hidden'} text-md font-bold text-gray-600`;
   const inputStyle = `w-full px-4 py-2 border rounded-md`;
   return (
@@ -19,6 +22,7 @@ export default function Input({label, name, placeholder, value = '',  className=
         name={name}
         id={name}
         defaultValue={value}
+        onChange={(e) => onChange(e.target.value)}
       />
     </div>
   )
